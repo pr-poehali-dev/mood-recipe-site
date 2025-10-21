@@ -1,7 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Index = () => {
+  const [showRecipe, setShowRecipe] = useState(false);
   const benefits = [
     {
       icon: "Sun",
@@ -33,7 +42,10 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Виртуальное пространство, представляющее собой совокупность взаимосвязанных страниц в Интернете
             </p>
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-[#FFD93D] to-[#FF6B9D] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <button 
+              onClick={() => setShowRecipe(true)}
+              className="group relative px-8 py-4 bg-gradient-to-r from-[#FFD93D] to-[#FF6B9D] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
               <span className="relative z-10">Узнать больше</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#FF6B9D] to-[#4ECDC4] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
@@ -113,6 +125,89 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      <Dialog open={showRecipe} onOpenChange={setShowRecipe}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-[#FFD93D] via-[#FF6B9D] to-[#4ECDC4] bg-clip-text text-transparent">
+              Рецепт хорошего настроения
+            </DialogTitle>
+            <DialogDescription className="text-base pt-4">
+              Ингредиенты для создания позитивного настроя каждый день
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-6 pt-4">
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#FFD93D]/10 to-[#FFD93D]/5 rounded-xl">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#FFD93D] to-[#FF6B9D] rounded-full flex items-center justify-center text-white font-bold">
+                  1
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Начните день с улыбки</h3>
+                  <p className="text-gray-600">
+                    Проснувшись, улыбнитесь себе в зеркале. Это простое действие запускает выработку эндорфинов — гормонов счастья.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#FF6B9D]/10 to-[#FF6B9D]/5 rounded-xl">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#FF6B9D] to-[#4ECDC4] rounded-full flex items-center justify-center text-white font-bold">
+                  2
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Найдите 10 минут для себя</h3>
+                  <p className="text-gray-600">
+                    Выделите время на то, что приносит вам радость: чтение, медитация, прогулка или любимое хобби.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#4ECDC4]/10 to-[#4ECDC4]/5 rounded-xl">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#4ECDC4] to-[#FFD93D] rounded-full flex items-center justify-center text-white font-bold">
+                  3
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Окружите себя позитивом</h3>
+                  <p className="text-gray-600">
+                    Общайтесь с людьми, которые вас вдохновляют. Слушайте приятную музыку, смотрите на красивые вещи.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#FFD93D]/10 to-[#FF6B9D]/10 rounded-xl">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#FFD93D] via-[#FF6B9D] to-[#4ECDC4] rounded-full flex items-center justify-center text-white font-bold">
+                  4
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Практикуйте благодарность</h3>
+                  <p className="text-gray-600">
+                    Каждый вечер вспоминайте три вещи, за которые вы благодарны. Это помогает сфокусироваться на хорошем.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#4ECDC4]/10 to-[#FFD93D]/10 rounded-xl">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#4ECDC4] to-[#FFD93D] rounded-full flex items-center justify-center text-white font-bold">
+                  5
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Делайте добрые дела</h3>
+                  <p className="text-gray-600">
+                    Помогайте другим — это возвращается к вам удвоенной радостью. Даже маленький добрый поступок имеет значение.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-[#FFD93D]/20 via-[#FF6B9D]/20 to-[#4ECDC4]/20 p-6 rounded-2xl border-2 border-[#4ECDC4]/30">
+              <p className="text-center text-gray-700 font-medium">
+                Помните: хорошее настроение — это выбор, который вы делаете каждый день! ✨
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
