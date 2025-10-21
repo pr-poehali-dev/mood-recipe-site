@@ -36,12 +36,9 @@ const Index = () => {
         
         <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#FFD93D] via-[#FF6B9D] to-[#4ECDC4] bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-[#FFD93D] via-[#FF6B9D] to-[#4ECDC4] bg-clip-text text-transparent leading-tight">
               Рецепт хорошего настроения
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Виртуальное пространство, представляющее собой совокупность взаимосвязанных страниц в Интернете
-            </p>
             <button 
               onClick={() => setShowRecipe(true)}
               className="group relative px-8 py-4 bg-gradient-to-r from-[#FFD93D] to-[#FF6B9D] text-white rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
